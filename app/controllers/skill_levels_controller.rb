@@ -1,2 +1,0 @@
-class SkillLevelsController < ApplicationController
-end
