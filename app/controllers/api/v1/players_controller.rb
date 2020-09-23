@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::PlayersController < ApplicationController
   def index
     players = Player.all
@@ -5,8 +7,8 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def create
-    if Player.find_by(:name => player_params[:name])
-      player = Player.find_by(:name => player_params[:name])
+    if Player.find_by(name: player_params[:name])
+      player = Player.find_by(name: player_params[:name])
       redirect_to "api/v1/players/#{player.id}"
     else
       player = Player.create(player_params)
@@ -16,7 +18,7 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def show
-    player = Player.find_by(:id => params[:id])
+    player = Player.find_by(id: params[:id])
     render json: player
   end
 
