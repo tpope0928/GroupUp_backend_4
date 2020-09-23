@@ -2,8 +2,8 @@
 
 one:
   player: one
-  location: 
+  game: one
 
 two:
   player: two
-  location: 
+  game: two
