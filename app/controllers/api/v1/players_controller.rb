@@ -19,7 +19,11 @@ class Api::V1::PlayersController < ApplicationController
 
   def show
     player = Player.find_by(id: params[:id])
-    render json: player
+    if player
+      render json: player
+    else
+      render json: { message: 'Player not found' }
+    end
   end
 
   private
